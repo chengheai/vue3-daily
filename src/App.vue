@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <todo-list />
+    <br />
     <div>{{ msg }}的年龄为{{ age }}</div>
     <div>computed: {{ double }}</div>
     <a-content :msg="msg" @change="handleChange"></a-content>
@@ -52,6 +54,7 @@ import keyCode from './components/keycode.vue'
 import aRef from './components/ref.vue'
 import Mixins from './components/mixins'
 import aNextTick from './components/nextTick.vue'
+import todoList from './components/todoList.vue'
 export default {
   name: 'App',
   components: {
@@ -63,6 +66,7 @@ export default {
     keyCode,
     aRef,
     aNextTick,
+    todoList,
   },
   mixins: [Mixins],
   setup() {
