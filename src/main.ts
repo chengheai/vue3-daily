@@ -2,7 +2,12 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { createPinia } from 'pinia'
 import { createRouter, createWebHashHistory } from 'vue-router'
-import routes from './router/index'
+const routes = [
+  {
+    path: '/',
+    component: App,
+  },
+]
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
