@@ -1,0 +1,23 @@
+<template>
+  <div>
+    <a-button type="primary">121</a-button>
+  </div>
+</template>
+
+<script>
+import { reactive, toRefs } from 'vue'
+
+export default {
+  setup() {
+    const state = reactive({
+      count: 0,
+    })
+
+    return {
+      ...toRefs(state),
+    }
+  },
+}
+</script>
+
+<style lang="scss" scoped></style>

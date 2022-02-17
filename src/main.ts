@@ -1,18 +1,17 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import { createPinia } from 'pinia'
-import { createRouter, createWebHashHistory } from 'vue-router'
-const routes = [
-  {
-    path: '/',
-    component: App,
-  },
-]
-const router = createRouter({
-  history: createWebHashHistory(),
-  routes,
-})
+import { router } from './router'
+import Antd from 'ant-design-vue'
+import * as antIcons from '@ant-design/icons-vue'
+import 'ant-design-vue/dist/antd.css'
+
 const app = createApp(App)
-app.use(createPinia())
 app.use(router)
+app.use(Antd)
+app.use(createPinia())
 app.mount('#app')
+Object.keys(antIcons).forEach((key) => {
+  app.component(key, antIcons[key])
+})
+app.config.globalProperties.$antIcons = antIcons
