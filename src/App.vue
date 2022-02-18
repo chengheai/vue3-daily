@@ -1,11 +1,11 @@
 <template>
-  <div class="wrap">
+  <div class="wrap" :class="{ bg: showBg }">
     <div class="header">
       <a-button type="primary" @click="goBack"
         ><template #icon><left-outlined /></template>返回</a-button
       >
       <h2>VUE3 DEMO</h2>
-      <span>当前位置: [ {{ route.meta.title || '首页' }} ]</span>
+      <span>当前位置: [ {{ title || '首页' }} ]</span>
     </div>
 
     <div class="content">
@@ -17,6 +17,8 @@
 <script>
 import Head from './components/header.vue'
 import { useRouter, useRoute } from 'vue-router'
+
+import { reactive, toRefs, watch } from 'vue'
 export default {
   components: {
     Head,
@@ -24,11 +26,32 @@ export default {
   setup() {
     const router = useRouter()
     const route = useRoute()
-    console.log('route: ', route.meta.title)
+    const data = reactive({
+      title: '',
+      showBg: false,
+    })
+
+    watch(
+      () => route.meta.title,
+      (val) => {
+        data.title = val
+
+        if (val === '首页') {
+          data.showBg = true
+        } else {
+          data.showBg = false
+        }
+      },
+      {
+        immediate: true,
+      }
+    )
+
     const goBack = () => {
       router.go(-1)
     }
     return {
+      ...toRefs(data),
       goBack,
       route,
     }
@@ -37,12 +60,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.bg {
+  background: url('./assets/bg.jpeg') no-repeat;
+}
 .wrap {
-  background: #f0f2f5;
-  padding-bottom: 71px;
   height: 100vh;
   // overflow: hidden;
   position: relative;
+  // background-size: cover;
   .header {
     width: 100%;
     height: 56px;
@@ -64,11 +89,10 @@ export default {
   }
   .content {
     // margin-top: 71px;
-    min-height: calc(100vh - 100px);
-    background: #fff;
-    margin: 15px;
+    min-height: calc(100vh - 56px);
+    // background: #fff;
     padding: 15px;
-    border: 1px solid #fff;
+    // border: 1px solid #fff;
     position: relative;
     top: 56px;
   }
