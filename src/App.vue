@@ -16,6 +16,7 @@
 
 <script>
 import Head from './components/header.vue'
+
 import { useRouter, useRoute } from 'vue-router'
 
 import { reactive, toRefs, watch } from 'vue'

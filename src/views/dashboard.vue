@@ -1,15 +1,27 @@
 <template>
   <a-row>
     <a-col :xs="10" :sm="8" :md="6" :lg="4" :xl="2">
+      <a-button type="primary" @click="handleLink('props')">setup参数</a-button>
+    </a-col>
+    <a-col :xs="10" :sm="8" :md="6" :lg="4" :xl="2">
       <a-button type="primary" @click="handleLink('watch')">watch</a-button>
     </a-col>
     <a-col :xs="10" :sm="8" :md="6" :lg="4" :xl="2">
       <a-button type="primary" @click="handleLink('base')">base</a-button>
     </a-col>
     <a-col :xs="10" :sm="8" :md="6" :lg="4" :xl="2">
+      <a-button type="primary" @click="handleLink('route')">route嵌套</a-button>
+    </a-col>
+    <a-col :xs="10" :sm="8" :md="6" :lg="4" :xl="2">
+      <a-button type="primary" @click="handleLink('route-mut')">route多个</a-button>
+    </a-col>
+    <a-col :xs="10" :sm="8" :md="6" :lg="4" :xl="2">
       <a-button type="primary" @click="handleLink('test')">test</a-button>
     </a-col>
   </a-row>
+  <!-- <a-space :size="8">
+    <a-button type="primary" @click="handleLink('props')">setup参数</a-button>
+  </a-space> -->
 </template>
 
 <script>
