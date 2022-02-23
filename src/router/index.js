@@ -67,6 +67,42 @@ const routes = [
       a: () => import('../views/route-mut/second.vue'),
       b: () => import('../views/route-mut/three.vue'),
     },
+    meta: {
+      title: '多个router-view',
+    },
+  },
+  {
+    path: '/alias',
+    component: () => import('../views/alias.vue'),
+    props: {
+      a: true,
+      b: false,
+    },
+    meta: {
+      title: '多个path跳转相同组件',
+    },
+    alias: ['/alias1', '/alias2', '/alias3'],
+  },
+  {
+    path: '/ref-reactive',
+    component: () => import('../views/ref&reactive.vue'),
+    meta: {
+      title: 'ref与reactive区别',
+    },
+  },
+  {
+    path: '/ref',
+    component: () => import('../views/ref.vue'),
+    meta: {
+      title: 'ref相关',
+    },
+  },
+  {
+    path: '/:pathMatch(.*)',
+    component: () => import('../views/404.vue'),
+    meta: {
+      title: '404',
+    },
   },
 ]
 export const router = createRouter({
