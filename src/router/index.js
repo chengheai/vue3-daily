@@ -104,6 +104,13 @@ const routes = [
       title: '404',
     },
   },
+  {
+    path: '/typing',
+    component: () => import('../views/typing.vue'),
+    meta: {
+      title: '自动打字效果',
+    },
+  },
 ]
 export const router = createRouter({
   history: createWebHashHistory(),
