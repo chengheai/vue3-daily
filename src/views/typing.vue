@@ -10,7 +10,7 @@ import { nextTick, ref, onMounted, watch } from 'vue'
 export default {
   setup() {
     const myText = ref(null)
-    const text = ref('js 实现的 打字效果，')
+    const text = ref('业精于勤荒于嬉；行成于思毁于随。方今圣贤相逢，治具毕张，拔去凶邪，登崇俊良')
     const msg = ref('')
     const i = ref(0)
     function handleTyping() {
@@ -22,17 +22,28 @@ export default {
       }
     }
     watch(msg, (val) => {
-      if (val.length > text.value.length) {
-        // typingInter()
+      if (val.length - text.value.length === 1) {
+        debounce(typingInter(), 1000)
       }
     })
+    function debounce(fn, delay) {
+      let timer = null
+      return function () {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+          fn.apply(this, arguments)
+        }, delay)
+      }
+    }
     const typingInter = () => {
-      msg.value = '11'
-      i.value = 0
+      setTimeout(() => {
+        msg.value = ''
+        i.value = 0
 
-      nextTick(() => {
-        handleTyping()
-      })
+        nextTick(() => {
+          handleTyping()
+        })
+      }, 2000)
     }
     onMounted(() => {
       nextTick(() => {
@@ -45,6 +56,7 @@ export default {
       myText,
       i,
       typingInter,
+      debounce,
       handleTyping,
     }
   },
