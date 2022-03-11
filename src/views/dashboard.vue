@@ -30,6 +30,9 @@
     <a-col :xs="10" :sm="8" :md="6" :lg="4" :xl="2">
       <a-button type="primary" @click="handleLink('typing')">auto typing</a-button>
     </a-col>
+    <a-col :xs="10" :sm="8" :md="6" :lg="4" :xl="2">
+      <a-button type="primary" @click="handleLink('communication')">组件通信集</a-button>
+    </a-col>
   </a-row>
   <!-- <a-space :size="8">
     <a-button type="primary" @click="handleLink('props')">setup参数</a-button>

@@ -1,0 +1,20 @@
+<template>
+  <a-list item-layout="horizontal" :data-source="childRefs?.list">
+    <template #renderItem="{ item }">
+      <a-list-item>
+        <a-list-item-meta>
+          <template #title>
+            <span>{{ item }}</span>
+          </template>
+        </a-list-item-meta>
+      </a-list-item>
+    </template>
+  </a-list>
+  <Child ref="childRefs" />
+</template>
+
+<script setup>
+import Child from './child.vue'
+import { ref } from 'vue'
+const childRefs = ref(null)
+</script>

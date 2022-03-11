@@ -111,6 +111,13 @@ const routes = [
       title: '自动打字效果',
     },
   },
+  {
+    path: '/communication',
+    component: () => import('../views/communication'),
+    meta: {
+      title: '组件通信',
+    },
+  },
 ]
 export const router = createRouter({
   history: createWebHashHistory(),
