@@ -6,6 +6,7 @@ import { router } from './router'
 import Antd from 'ant-design-vue'
 import * as antIcons from '@ant-design/icons-vue'
 import 'ant-design-vue/dist/antd.css'
+import './styles/common.scss'
 
 const app = createApp(App)
 app.use(router)

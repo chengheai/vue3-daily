@@ -1,1 +1,0 @@
-import{_ as e}from"./index.d683bc9f.js";import{o as c,c as o}from"./vendor.4b482e0c.js";const n={};function r(s,t){return c(),o("h1",null,"second Seciton")}var d=e(n,[["render",r]]);export{d as default};

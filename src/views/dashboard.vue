@@ -33,6 +33,15 @@
     <a-col :xs="10" :sm="8" :md="6" :lg="4" :xl="2">
       <a-button type="primary" @click="handleLink('communication')">组件通信集</a-button>
     </a-col>
+    <a-col :xs="10" :sm="8" :md="6" :lg="4" :xl="2">
+      <a-button type="primary" @click="handleLink('h')">渲染函数</a-button>
+    </a-col>
+    <a-col :xs="10" :sm="8" :md="6" :lg="4" :xl="2">
+      <a-button type="primary" @click="handleLink('component')">组件渲染</a-button>
+    </a-col>
+    <a-col :xs="10" :sm="8" :md="6" :lg="4" :xl="2">
+      <a-button type="primary" @click="handleLink('watch-group')">监听集合</a-button>
+    </a-col>
   </a-row>
   <!-- <a-space :size="8">
     <a-button type="primary" @click="handleLink('props')">setup参数</a-button>
@@ -55,7 +64,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.a-col {
+.ant-btn {
   margin-bottom: 10px;
 }
 </style>

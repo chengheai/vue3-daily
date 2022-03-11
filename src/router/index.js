@@ -118,6 +118,27 @@ const routes = [
       title: '组件通信',
     },
   },
+  {
+    path: '/h',
+    component: () => import('../views/h'),
+    meta: {
+      title: '渲染函数',
+    },
+  },
+  {
+    path: '/component',
+    component: () => import('../views/component'),
+    meta: {
+      title: '组件渲染',
+    },
+  },
+  {
+    path: '/watch-group',
+    component: () => import('../views/watch-group'),
+    meta: {
+      title: '监听集合',
+    },
+  },
 ]
 export const router = createRouter({
   history: createWebHashHistory(),
