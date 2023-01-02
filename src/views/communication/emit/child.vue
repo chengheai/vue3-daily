@@ -16,7 +16,7 @@ import { ref, defineEmits } from 'vue'
 import { message } from 'ant-design-vue'
 const value = ref('')
 const emits = defineEmits(['add'])
-const onSearch = (val) => {
+const onSearch = val => {
   if (!val) {
     message.info('This is a required input')
     return

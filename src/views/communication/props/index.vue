@@ -18,7 +18,7 @@ import { ref } from 'vue'
 import { message } from 'ant-design-vue'
 const value = ref('')
 const list = ref(['javascript', 'python'])
-const onSearch = (val) => {
+const onSearch = val => {
   if (!val) {
     message.info('This is a required input')
     return

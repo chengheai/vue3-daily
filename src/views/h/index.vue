@@ -1,5 +1,6 @@
 <template>
   <Child name="child" ref="myChild" />
+  {{ tag }}
   <a-button type="primary" @click="() => myChild?.reset()">reset</a-button>
 </template>
 

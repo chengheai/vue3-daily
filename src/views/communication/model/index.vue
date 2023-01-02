@@ -15,6 +15,6 @@
 
 <script setup>
 import Child from './child.vue'
-import { defineProps, ref } from 'vue'
+import { ref } from 'vue'
 const list = ref(['javascript', 'CSS'])
 </script>

@@ -11,7 +11,7 @@ export default {
   name: 'content',
   props: {
     msg: String,
-    default: '',
+    default: () => ''
   },
   setup(props, ctx) {
     console.log('ctx: ', ctx)
@@ -26,9 +26,9 @@ export default {
     }
     return {
       data,
-      handleClick,
+      handleClick
     }
-  },
+  }
 }
 </script>
 

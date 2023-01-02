@@ -1,17 +1,17 @@
 <template>
   <div>
-    <head />
+    <XmHead />
     <router-view />
   </div>
 </template>
 
 <script>
-import Head from './header.vue'
+import XmHead from './header.vue'
 export default {
   components: {
-    Head,
+    XmHead
   },
-  setup() {},
+  setup() {}
 }
 </script>
 

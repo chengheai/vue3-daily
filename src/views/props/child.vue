@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { defineComponent, reactive, toRefs, defineExpose } from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 /*
 
 attrs 和 slots 是有状态的对象，它们总是会随组件本身的更新而更新。
@@ -20,8 +20,8 @@ export default defineComponent({
   props: {
     title: {
       type: String,
-      default: '默认',
-    },
+      default: '默认'
+    }
   },
   emits: ['son-click'],
   setup(props, { attrs, emit, expose, slots }) {
@@ -31,7 +31,7 @@ export default defineComponent({
     console.log('expose: ', expose)
     console.log('props:', props)
     const data = reactive({
-      m1: 'ggggg',
+      m1: 'ggggg'
     })
     const sonHeader = () => {
       emit('son-click', '子组件传递给父组件')
@@ -41,9 +41,9 @@ export default defineComponent({
       sonHeader,
       ...toRefs(props),
       ...toRefs(data),
-      attrs,
+      attrs
     }
-  },
+  }
 })
 </script>
 

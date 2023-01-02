@@ -1,0 +1,1 @@
+import{_ as e,e as s,t as o,o as a,f as r,h as n}from"./index.c3b59d60.js";const c={setup(){const t=s({count:0});return{...o(t)}}};function p(t,u,f,_,i,l){return a(),r("h1",null,n(t.count),1)}var m=e(c,[["render",p]]);export{m as default};

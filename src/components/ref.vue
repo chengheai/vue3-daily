@@ -15,10 +15,10 @@ export default {
   setup() {
     const state = reactive({
       height: 0,
-      items: [],
+      items: []
     })
     const handleLoad = () => {
-      axios.get('https://dog.ceo/api/breeds/image/random/3').then((res) => {
+      axios.get('https://dog.ceo/api/breeds/image/random/3').then(res => {
         state.items = res.data.message
       })
     }
@@ -26,6 +26,8 @@ export default {
     watch(
       () => state,
       (newVal, val) => {
+        console.log('newVal: ', newVal, val)
+
         nextTick(() => {
           console.log('nextTick2')
           console.log(myRef.value)
@@ -33,7 +35,7 @@ export default {
         })
       },
       {
-        deep: true,
+        deep: true
         // immediate: true,
       }
     )
@@ -46,9 +48,9 @@ export default {
     })
     return {
       myRef,
-      ...toRefs(state),
+      ...toRefs(state)
     }
-  },
+  }
 }
 </script>
 

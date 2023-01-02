@@ -14,11 +14,14 @@
     <li v-for="(item, index) in filterTodo" :key="index">
       <div>
         <input type="checkbox" v-model="item.isFinished" />
-        <span :style="{ textDecoration: item.isFinished ? 'line-through' : '' }">{{
-          item.text
-        }}</span>
+        <span
+          :style="{ textDecoration: item.isFinished ? 'line-through' : '' }"
+          >{{ item.text }}</span
+        >
       </div>
-      <button style="margin-left: 77px" @click="handleDel(item)" type="button">X</button>
+      <button style="margin-left: 77px" @click="handleDel(item)" type="button">
+        X
+      </button>
     </li>
   </ul>
   <p v-else>暂无数据</p>
@@ -30,8 +33,9 @@ import { useTodoStore } from '../store/todo'
 import { storeToRefs } from 'pinia'
 export default {
   setup(props) {
+    console.log('props: ', props)
     const data = reactive({
-      text: '',
+      text: ''
     })
     const tempTodo = useTodoStore()
     const { filterTodo, otherUser } = storeToRefs(tempTodo)
@@ -44,10 +48,10 @@ export default {
       data.text = ''
     }
     const isEmpty = computed(() => !filterTodo.value.length)
-    const handleClick = (e) => {
+    const handleClick = e => {
       tempTodo.$patch({ filter: e.target.dataset.text })
     }
-    const handleDel = (row) => {
+    const handleDel = row => {
       tempTodo.removeTodo(row)
     }
 
@@ -59,9 +63,9 @@ export default {
       otherUser,
       handleAdd,
       handleDel,
-      handleClick,
+      handleClick
     }
-  },
+  }
 }
 </script>
 <style lang="css" scoped>

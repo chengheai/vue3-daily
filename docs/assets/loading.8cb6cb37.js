@@ -1,0 +1,1 @@
+import{_ as e,e as a,t as s,o,f as r,h as n}from"./index.c3b59d60.js";const c={setup(){const t=a({text:"loading"});return{...s(t)}}};function p(t,i,l,f,_,u){return o(),r("h1",null,n(t.text),1)}var m=e(c,[["render",p]]);export{m as default};

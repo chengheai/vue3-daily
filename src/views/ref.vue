@@ -19,15 +19,23 @@
         title="响应式数据发生改变，而原始数据obj并不会改变。
 原因在于，ref的本质是拷贝，与原始数据没有引用关系"
       >
-        <a-button type="primary" @click="handleChange('ref')">ref change</a-button>
+        <a-button type="primary" @click="handleChange('ref')"
+          >ref change</a-button
+        >
       </a-tooltip>
-      <a-tooltip title="响应式数据发生改变，原始数据obj并不会改变，但是UI界面不会更新">
-        <a-button type="primary" @click="handleChange('toRef')">toRef change</a-button>
+      <a-tooltip
+        title="响应式数据发生改变，原始数据obj并不会改变，但是UI界面不会更新"
+      >
+        <a-button type="primary" @click="handleChange('toRef')"
+          >toRef change</a-button
+        >
       </a-tooltip>
       <a-tooltip
         title="有的时候，我们希望将对象的多个属性都变成响应式数据，并且要求响应式数据和原始数据关联，并且更新响应式数据的时候不更新界面，就可以使用toRefs，用于批量设置多个数据为响应式数据"
       >
-        <a-button type="primary" @click="handleChange('toRefs')">toRefs change</a-button>
+        <a-button type="primary" @click="handleChange('toRefs')"
+          >toRefs change</a-button
+        >
       </a-tooltip>
     </a-space>
   </div>
@@ -47,7 +55,7 @@ export default {
     function handleChange(val) {
       if (val === 'ref') {
         newObj1.value = 'Tom1'
-      } else if ('toRef') {
+      } else if (val === 'toRef') {
         newObj2.value = 'Tom2fff'
         console.log('newObj2: ', newObj2)
       } else {
@@ -56,7 +64,7 @@ export default {
       }
     }
     return { obj1, obj2, obj3, newObj1, newObj2, newObj3, handleChange }
-  },
+  }
 }
 </script>
 

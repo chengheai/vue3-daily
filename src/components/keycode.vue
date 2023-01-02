@@ -5,9 +5,9 @@
 </template>
 
 <script setup>
-import { reactive, toRefs } from 'vue'
+import { reactive } from 'vue'
 const data = reactive({
-  num: '',
+  num: ''
 })
 const handlePress = () => {
   console.log(111)

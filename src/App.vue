@@ -1,9 +1,12 @@
 <template>
+  <XmHead v-if="false" />
   <div class="wrap" :class="{ bg: showBg }">
     <div class="header">
-      <a-button type="primary" @click="goBack"
+      <a-button v-if="!showBg" type="primary" @click="goBack"
         ><template #icon><left-outlined /></template>返回</a-button
       >
+
+      <span v-else></span>
       <h2>VUE3 DEMO</h2>
       <span>当前位置: [ {{ title || '首页' }} ]</span>
     </div>
@@ -15,26 +18,26 @@
 </template>
 
 <script>
-import Head from './components/header.vue'
+import XmHead from './components/header.vue'
 
 import { useRouter, useRoute } from 'vue-router'
 
 import { reactive, toRefs, watch } from 'vue'
 export default {
   components: {
-    Head,
+    XmHead
   },
   setup() {
     const router = useRouter()
     const route = useRoute()
     const data = reactive({
       title: '',
-      showBg: false,
+      showBg: false
     })
 
     watch(
       () => route.meta.title,
-      (val) => {
+      val => {
         data.title = val
 
         if (val === '首页') {
@@ -44,7 +47,7 @@ export default {
         }
       },
       {
-        immediate: true,
+        immediate: true
       }
     )
 
@@ -54,9 +57,9 @@ export default {
     return {
       ...toRefs(data),
       goBack,
-      route,
+      route
     }
-  },
+  }
 }
 </script>
 
