@@ -1,6 +1,6 @@
 //此处的规则供参考，其中多半其实都是默认值，可以根据个人习惯改写
 module.exports = {
-  printWidth: 80, //单行长度
+  printWidth: 100, //单行长度
   tabWidth: 2, //缩进长度
   useTabs: false, //使用空格代替tab缩进
   semi: false, //句末使用分号
@@ -13,5 +13,5 @@ module.exports = {
   requirePragma: false, //无需顶部注释即可格式化
   trailingComma: 'none', //多行时尽可能打印尾随逗号
   useTabs: false, //使用空格代替tab缩进
-  endOfLine: 'auto',
+  endOfLine: 'auto'
 }
