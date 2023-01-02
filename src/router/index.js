@@ -145,6 +145,13 @@ const routes = [
     meta: {
       title: 'chaining'
     }
+  },
+  {
+    path: '/inject',
+    component: () => import('../views/inject'),
+    meta: {
+      title: 'inject'
+    }
   }
 ]
 export const router = createRouter({

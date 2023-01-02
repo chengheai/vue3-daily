@@ -22,12 +22,16 @@ import XmHead from './components/header.vue'
 
 import { useRouter, useRoute } from 'vue-router'
 
-import { reactive, toRefs, watch } from 'vue'
+import { reactive, toRefs, watch, provide } from 'vue'
+
+import { userInjectionKey, userInfo } from './utils'
+
 export default {
   components: {
     XmHead
   },
   setup() {
+    provide(userInjectionKey, userInfo)
     const router = useRouter()
     const route = useRoute()
     const data = reactive({
