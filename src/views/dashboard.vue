@@ -61,6 +61,7 @@ export default {
     const router = useRouter()
     const handleLink = path => {
       router.push(`/${path}`)
+      window.sessionStorage.setItem('session', 'test')
     }
     return {
       handleLink
