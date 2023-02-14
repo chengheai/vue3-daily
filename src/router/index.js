@@ -152,6 +152,20 @@ const routes = [
     meta: {
       title: 'inject'
     }
+  },
+  {
+    path: '/persist',
+    component: () => import('../views/persist'),
+    meta: {
+      title: 'persist'
+    }
+  },
+  {
+    path: '/sync',
+    component: () => import('../views/sync'),
+    meta: {
+      title: '异步组件'
+    }
   }
 ]
 export const router = createRouter({
